@@ -26,9 +26,13 @@ const FileUpload = () => {
       formData.append("file", selectedFile);
 
       try {
-        const response = await axios.post("https://localhost:4000", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        const response = await axios.post(
+          "https://certificategenerator-90xv.onrender.com/upload",
+          formData,
+          {
+            headers: { "Content-Type": "multipart/form-data" },
+          }
+        );
 
         if (response.status === 200) {
           setUploadStatus("File uploaded successfully!");
